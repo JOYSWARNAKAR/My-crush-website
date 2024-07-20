@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+.heart {
+    width: 150px;
+    height: 100px;
+    position: relative;
+    margin: 0 auto;
+    animation: heartbeat 1s infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    width: 100px;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    border-radius: 50px 50px 0 0;
+    background: red;
+}
+
+.heart:before {
+    left: 50px;
+    transform: rotate(-50deg);
+    transform-origin: 0 100%;
+}
+
+.heart:after {
+    left: 0;
+    transform: rotate(50deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.message {
+    margin-top: 100px;
+    font-size: 40px;
+    color: #333;
+}
